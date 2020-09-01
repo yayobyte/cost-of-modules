@@ -14,6 +14,9 @@ export const SuggestionsContaner = styled.div`
         font-weight: 400;
         font-size: 1.2rem;
         font-family: 'Lato', sans-serif;
+        em {
+            font-weight: 700;
+        }
     }
 
     div.item-description {
@@ -28,7 +31,9 @@ export const menuStyle : {[Key: string] : any} = {
     margin: "0 auto",
     border: "1px solid var(--color-border)",
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-    borderBottom: "none"
+    borderBottom: "none",
+    maxHeight: "300px",
+    overflowY: "scroll",
 };
 
 export const inputStyle : {[Key: string] : any} = {
