@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledProps } from "../../types/searchBar";
+import { StyledProps } from "../../types/landingPage";
 
 export const SuggestionsContaner = styled.div`
     background-color: ${({ hasBackgroundColor } : StyledProps ) => hasBackgroundColor ? "var(--color-secondary-light)" : ""};

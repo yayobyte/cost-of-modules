@@ -2,14 +2,19 @@ import {
     GET_PACKAGE_SUGGESTION_REQ,
     GET_PACKAGE_SUGGESTION_SUC,
     GET_PACKAGE_SUGGESTION_FAIL,
+    SET_PACKAGE_INFO,
+    SET_USER_PACKAGE_TO_PROCESS,
 } from "../actionTypes";
-import { StoreType, ReducerActionType } from "../../types";
+import { RootReducerType, ReducerActionType } from "../../types";
 
-const initialState : StoreType = {
+const initialState : RootReducerType = {
     query: "",
     results: [],
     loading: false,
     message: null,
+    packageName: null,
+    version: null,
+    userSelectedPackage: null,
 }
 
 export const mainReducer = (store = initialState, action: ReducerActionType) => {
@@ -32,6 +37,16 @@ export const mainReducer = (store = initialState, action: ReducerActionType) => 
                 ...store,
                 loading: false,
                 message: action.payload,
+            });
+        case SET_PACKAGE_INFO:
+            return({
+                ...store,
+                ...action.payload,
+            });
+        case SET_USER_PACKAGE_TO_PROCESS:
+            return({
+                ...store,
+                userSelectedPackage: action.payload,
             });
         default:
             return (store);

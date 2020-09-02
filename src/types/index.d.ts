@@ -1,2 +1,3 @@
 export * from "./reducer";
-export * from "./searchBar";
+export * from "./landingPage";
+export * from "./actions";
