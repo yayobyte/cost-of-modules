@@ -1,6 +1,6 @@
 export interface Store {
     root: RootReducerType,
-} 
+};
 
 export interface RootReducerType {
     query: string,
@@ -10,9 +10,12 @@ export interface RootReducerType {
     version: string | null,
     packageName: string | null,
     userSelectedPackage: string | null,
-}
+    page: Page,
+};
 
 export interface ReducerActionType {
     type: string,
     payload: any,
-}
+};
+
+export type Page = "search" | "graph";

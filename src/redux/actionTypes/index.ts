@@ -4,4 +4,5 @@ export {
     GET_PACKAGE_SUGGESTION_SUC,
     SET_PACKAGE_INFO,
     SET_USER_PACKAGE_TO_PROCESS,
+    SET_PAGE,
 } from "./landingPage";

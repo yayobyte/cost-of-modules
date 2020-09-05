@@ -6,10 +6,13 @@ import {
     GET_PACKAGE_SUGGESTION_REQ,
     GET_PACKAGE_SUGGESTION_SUC,
     GET_PACKAGE_SUGGESTION_FAIL,
+
+    //Redux only actions
     SET_PACKAGE_INFO,
     SET_USER_PACKAGE_TO_PROCESS,
+    SET_PAGE,
 } from "../actionTypes";
-import { PackageInfo } from "../../types";
+import { PackageInfo, Page } from "../../types";
 
 /** GET_PACKAGE ACTIONS */
 
@@ -54,4 +57,10 @@ export const setPackageInfo = (packageInfo : PackageInfo) => ({
 export const setUserPackageToProcess = (packageName : string) => ({
     type: SET_USER_PACKAGE_TO_PROCESS,
     payload: packageName,
+});
+
+/** Set page */
+export const setPage = (page : Page) => ({
+    type: SET_PAGE,
+    payload: page,
 });

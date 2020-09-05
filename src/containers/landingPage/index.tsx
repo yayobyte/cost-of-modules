@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Autocomplete from "react-autocomplete";
 import messages from "../../i18n";
 import logo from '../../assets/img/logo.svg';
-import { getSuggestions, setPackageInfo, setUserPackageToProcess } from "../../redux/actions";
+import { getSuggestions, setPackageInfo, setUserPackageToProcess, setPage } from "../../redux/actions";
 import { useSuggestions, usePackageInfo } from "../../redux/store";
 import { inputStyle, menuStyle, SuggestionsContaner, wrapperStyle} from "./styled";
 
@@ -43,6 +43,7 @@ const LandingPage = () => {
     /** SetPackage selected by user */
     const selectValue = (val : string) => {
         dispatch(setUserPackageToProcess(val));
+        dispatch(setPage("graph"));
     }
     
     return (
