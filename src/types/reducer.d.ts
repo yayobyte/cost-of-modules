@@ -5,6 +5,7 @@ export interface Store {
 export interface RootReducerType {
     query: string,
     results: Array<{[Key: string]: any}>,
+    dependency: {[Key: string]: any},
     loading: boolean,
     message: string | null,
     version: string | null,

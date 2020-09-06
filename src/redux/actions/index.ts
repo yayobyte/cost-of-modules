@@ -3,4 +3,5 @@ export {
     setPackageInfo,
     setUserPackageToProcess,
     setPage,
+    getDependency,
 } from "./landingPage";

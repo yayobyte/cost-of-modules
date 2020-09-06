@@ -1,7 +1,7 @@
 import LandingPage from "./landingPage";
-import Graph from "./graph";
+import GraphPage from "./graphPage";
 
 export {
     LandingPage,
-    Graph,
+    GraphPage,
 }

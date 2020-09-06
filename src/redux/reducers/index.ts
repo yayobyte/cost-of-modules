@@ -3,6 +3,10 @@ import {
     GET_PACKAGE_SUGGESTION_SUC,
     GET_PACKAGE_SUGGESTION_FAIL,
 
+    GET_DEPENDENCY_REQ,
+    GET_DEPENDENCY_SUC,
+    GET_DEPENDENCY_FAIL,
+
     SET_PACKAGE_INFO,
     SET_USER_PACKAGE_TO_PROCESS,
     SET_PAGE,
@@ -12,6 +16,7 @@ import { RootReducerType, ReducerActionType } from "../../types";
 const initialState : RootReducerType = {
     query: "",
     results: [],
+    dependency: {},
     loading: false,
     message: null,
     packageName: null,
@@ -22,6 +27,7 @@ const initialState : RootReducerType = {
 
 export const mainReducer = (store = initialState, action: ReducerActionType) => {
     switch(action.type) {
+        // Get Package suggestion listeners
         case GET_PACKAGE_SUGGESTION_REQ:
             return ({
                 ...store,
@@ -41,6 +47,29 @@ export const mainReducer = (store = initialState, action: ReducerActionType) => 
                 loading: false,
                 message: action.payload,
             });
+        
+        // Get Dependency Listeners
+        case GET_DEPENDENCY_REQ:
+            return ({
+                ...store,
+                loading: true,
+                message: null,
+            });
+        case GET_DEPENDENCY_SUC:
+            return ({
+                ...store,
+                loading: false,
+                message: null,
+                dependency: action.payload,
+            });
+        case GET_DEPENDENCY_FAIL:
+            return ({
+                ...store,
+                loading: false,
+                message: action.payload,
+            });
+        
+        //Redux only actions
         case SET_PACKAGE_INFO:
             return({
                 ...store,

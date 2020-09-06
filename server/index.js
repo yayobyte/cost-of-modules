@@ -1,26 +1,19 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
+const PORT = require("./config");
 
-const PORT = process.env.PORT || 5000;
+// Cors middleware
+app.use(cors());
 
-const bundles = [
-    {
-        id: 0,
-        name: "reactjs",
-    },
-    {
-        id: 1,
-        name: "reduxjs",
-    },
-    {
-        id: 2,
-        name: "axios",
-    },
-];
+// Dependencies routes middleware
+app.use("/dependency", require("./routes/api"));
 
+// Body Parser middleware
+app.use(express.json());
+
+// Routes
 app.get('/', (req, res) => {
-    res.json(bundles);
+    res.json({ message: "Working fine" });
 });
-
 app.listen(PORT, () => console.log(`Listen port: ${PORT}`));
