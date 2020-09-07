@@ -44,7 +44,7 @@ export const inputStyle : {[Key: string] : any} = {
     color: "var(--color-primary-dark)",
     textAlign: "center",
     maxWidth: "600px",
-    width: "80%",
+    width: "100%",
     height: "48px",
     padding: "10px 5px 10px 20px",
     border: "none",

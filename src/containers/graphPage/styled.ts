@@ -30,6 +30,7 @@ export const GraphPageContainer = styled.div`
     .statistics-row {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         margin-top: 80px;
 
@@ -51,6 +52,11 @@ export const GraphPageContainer = styled.div`
                 display: flex;
             }
 
+        }
+
+        .statistics-graph {
+            margin-top: 70px;
+            margin-left: 20px;  
         }
     }
 

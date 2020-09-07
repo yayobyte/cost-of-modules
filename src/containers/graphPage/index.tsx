@@ -1,14 +1,20 @@
 import React from "react";
+import { BarChart, Bar, XAxis } from 'recharts';
 import { SearchBar, StatsInfo } from "../../components";
 import { GraphPageContainer } from "./styled";
 import logo from '../../assets/img/github-logo.png';
 import messages from "../../i18n";
-import { useSizes } from "../../redux/store/graphPage";
+import { useSizes, useVersionsArray } from "../../redux/store";
 import { calculateSize, get2GTimeFromSize, get3GTimeFromSize } from "../../utils";
 
 const GraphPage = () => {
     const { gzip, size } = useSizes();
+    const { versionsArray } = useVersionsArray();
+    console.log(versionsArray);
 
+    const onRowClick = (e: any) => {
+        console.log(e); 
+    }
     return (
         <GraphPageContainer>
             <div className="header">
@@ -35,7 +41,16 @@ const GraphPage = () => {
                         </div>
                     </div>
                     <div className="statistics-graph">
-                        Here goes a graph
+                        <BarChart
+                            width={400}
+                            height={300}
+                            data={versionsArray}
+                            margin={{ top: 0, right: 5, bottom: 10, left: 5 }}
+                            onClick={onRowClick}
+                        >
+                            <Bar dataKey="size" fill="#2196f3" barSize={30}/>
+                            <XAxis dataKey="version" />
+                        </BarChart>
                     </div>
                 </div>
             }

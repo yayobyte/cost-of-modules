@@ -1,2 +1,2 @@
 export { useSuggestions, usePackageInfo } from "./landingPage";
-export { useUserSelectedPackage } from "./graphPage";
+export { useUserSelectedPackage, useSizes, useVersionsArray } from "./graphPage";

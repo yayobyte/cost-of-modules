@@ -12,10 +12,11 @@ function App() {
     const { page } = usePage();
 
     /** Effects */
+    /*
     useEffect(() => {
         history.push(page);
     }, [page]);
-    
+    */
    
     return (
         <div className="App">

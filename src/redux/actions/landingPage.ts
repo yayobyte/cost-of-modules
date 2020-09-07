@@ -69,7 +69,7 @@ export const getDependency = (name : string) => {
     return async (dispatch: ThunkDispatch<RootReducerType, null, Action<string>>) => {
         dispatch(getDependencyRequest());
         try {
-            const result = await localAPI.get(`size?package=${name}`);
+            const result = await localAPI.get(`package-history?package=${name}`);
             dispatch(getDependencySuccess(result.data));
         }
         catch (error) {
