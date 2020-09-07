@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const StatsInfoContainer = styled.div`
     margin: 0 10px;
-    max-width: 180px;
+    width: 180px;
 
     .title {
         font-size: 1.2rem;

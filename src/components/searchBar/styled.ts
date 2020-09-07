@@ -34,6 +34,10 @@ export const menuStyle : {[Key: string] : any} = {
     borderBottom: "none",
     maxHeight: "300px",
     overflowY: "scroll",
+    position: "absolute",
+    overflow: "auto",
+    zIndex: 10,
+    background: "rgba(255,255,255,0.96)",
 };
 
 export const inputStyle : {[Key: string] : any} = {
